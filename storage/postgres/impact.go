@@ -45,7 +45,7 @@ func (I *NewImpact) GetUserImpact(userId *pb.UserId)(*pb.CarbonFootprints,error)
 
 func (I *NewImpact) GetGroupImpact(groupId *pb.GroupId)(*pb.CarbonFootprint,error){
 	return nil,nil
-
+}
   
  func(I *NewImpact) GetLeaderBoardUsers(leaderBoard *pb.LeaderBoard)(*pb.LeaderBoardUsers, error){
 	return nil, nil

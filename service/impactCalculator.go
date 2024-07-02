@@ -1,4 +1,4 @@
-package serivce
+package service
 
 import (
 	"context"
@@ -23,7 +23,7 @@ func (S *Server) CreateFootprint(ctx context.Context, footprint *pb.CarbonFootpr
 	return status, err
 }
 
-func (S *Server) GetUserImpact(ctx context.Context, userId *pb.UserId) (*pb.CarbonFootprint, error) {
+func (S *Server) GetUserImpact(ctx context.Context, userId *pb.UserId) (*pb.CarbonFootprints, error) {
 	footprint, err := S.C.GetUserImpact(userId)
 	if err != nil {
 		return nil, err
