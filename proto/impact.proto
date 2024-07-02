@@ -7,7 +7,7 @@ package impact;
 
 service Impact{
     rpc CreateFootprint(CarbonFootprint) returns (Status){}
-    rpc GetUserImpact(UserId) returns (CarbonFootprint){}
+    rpc GetUserImpact(UserId) returns (CarbonFootprints){}
     rpc GetGroupImpact(GroupId) returns (CarbonFootprint){}
     rpc GetLeaderBoardUsers(LeaderBoard) returns (LeaderBoardUsers){}
     rpc GetLeaderBoardGroups(LeaderBoard) returns (LeaderBoardGroups){}
@@ -61,4 +61,8 @@ message DonationCause{
 message Donations{
     float amount  = 1;
     string cause = 2;
+}
+
+message CarbonFootprints{
+    repeated CarbonFootprint carbonFootprints = 1;
 }
