@@ -2,7 +2,7 @@ package main
 
 import (
 	"impactcalculator/config"
-	pb "impactcalculator/generated"
+	pb "impactcalculator/generated/impact"
 	"impactcalculator/service"
 	"impactcalculator/storage"
 	"impactcalculator/storage/postgres"
