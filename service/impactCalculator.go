@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	pb "impactcalculator/generated"
+	pb "impactcalculator/generated/impact"
 	"impactcalculator/storage/postgres"
 )
 
@@ -23,20 +23,20 @@ func (S *Server) CreateFootprint(ctx context.Context, footprint *pb.CarbonFootpr
 	return status, err
 }
 
-func (S *Server) GetUserImpact(ctx context.Context, userId *pb.UserId) (*pb.CarbonFootprints, error) {
-	footprint, err := S.C.GetUserImpact(userId)
+func (S *Server) GetUserImpact(ctx context.Context, userId *pb.UserId) (*pb.Amount, error) {
+	amount, err := S.C.GetUserImpact(userId)
 	if err != nil {
 		return nil, err
 	}
-	return footprint, nil
+	return amount, nil
 }
 
-func (S *Server) GetGroupImpact(ctx context.Context, groupId *pb.GroupId) (*pb.CarbonFootprint, error) {
-	footprint, err := S.C.GetGroupImpact(groupId)
+func (S *Server) GetGroupImpact(ctx context.Context, groupId *pb.GroupId) (*pb.Amount, error) {
+	amount, err := S.C.GetGroupImpact(groupId)
 	if err != nil {
 		return nil, err
 	}
-	return footprint, nil
+	return amount, nil
 }
 
 func (S *Server) GetLeaderBoardUsers(ctx context.Context, board *pb.LeaderBoard) (*pb.LeaderBoardUsers, error) {
