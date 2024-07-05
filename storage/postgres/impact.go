@@ -2,7 +2,6 @@ package postgres
 
 import (
 	"database/sql"
-	"impactcalculator/generated/impact"
 	pb "impactcalculator/generated/impact"
 )
 
@@ -59,7 +58,7 @@ func (I *NewImpact) GetLeaderBoardUsers(leaderBoard *pb.LeaderBoard) (*pb.Leader
 		}
 		users = append(users, user)
 	}
-	return &impact.LeaderBoardUsers{Users: users}, nil
+	return &pb.LeaderBoardUsers{Users: users}, nil
 }
 
 func (I *NewImpact) GetLeaderBoardGroups(leaderBoard *pb.LeaderBoard) (*pb.LeaderBoardGroups, error) {
@@ -76,7 +75,7 @@ func (I *NewImpact) GetLeaderBoardGroups(leaderBoard *pb.LeaderBoard) (*pb.Leade
 		}
 		groups = append(groups, group)
 	}
-	return &impact.LeaderBoardGroups{Groups: groups}, nil
+	return &pb.LeaderBoardGroups{Groups: groups}, nil
 }
 
 func (I *NewImpact) CreateDonation(donation *pb.Donation) (*pb.Status, error) {
